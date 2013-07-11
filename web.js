@@ -14,5 +14,6 @@ app.listen(port, function() {
 });
 
 function getFile(filename){
-  return fs.readFileSync(filename).toString();
-}
+  var bf = fs.readFileSync(filename);
+  return bf.toString('utf-8');
+};
