@@ -4,8 +4,8 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  //response.send(getFile('index.html');
-  response.send(Buffer.toString(fs.readFileSync('index.html')));
+  response.send(getFile('index.html');
+  //response.send(Buffer.toString(fs.readFileSync('index.html')));
 });
 
 var port = process.env.PORT || 5000;
@@ -14,5 +14,5 @@ app.listen(port, function() {
 });
 
 function getFile(filename){
-  return Buffer.toString(fs.readFileSync(filename));
+  return fs.readFileSync(filename).toString();
 }
